@@ -1,3 +1,28 @@
+// Document Loads
+$(document).ready(function(){
+
+    console.log("Hello");
+
+    //Name Welcome Change
+    $("#changeText").text("Welcome to Cetecea Cruises");
+
+    //Logo Visual Change
+    //$("#changeLogo").html("<img src="assets/Cetecea Cruises Logo Hover.png" alt="Logo" height="60">");
+
+});
+
+$(document).ready(function(){
+    $.ajax({
+        type:"GET",
+        url:"https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=9e824547855a862d01427a733135023d",
+        success:function(data){
+            console.log(data);
+        }
+    }).done(function(){
+        ("#changeWeather").text(data.main.temp);
+    })
+})
+
 const arrayTrips = [
     {
         destination: "Whalescape Odyssey",
