@@ -5,113 +5,120 @@ const arrayTrips = [
         duration: "Duration: 2.5 hours",
         departure: "Departure: 06:00",
         code: "Code: 2506",
-        price: "Price: R2500.00",
+        price: 2500.00,
         image: "Moments by Kai Yan & Matt Walch.jpg",
         time: "short",
         place: "single",
-        rank: "",
+        date: "2023-06-01",
+        origin: "Miami"
     },
     {
         destination: "Whalesong Sojourns",
         duration: "Duration: 3 hours",
         departure: "Departure: 07:00",
         code: "Code: 3007",
-        price: "Price: R3000.00",
+        price: 3000.00,
         image: "Family by Kai Yan & Matt Walch.jpg",
         time: "short",
         place: "single",
-        rank: "",
+        date: "2023-06-02",
+        origin: "Orlando"
     },
     {
         destination: "Oceanic Whale Quest",
         duration: "Duration: 3.5 hours",
         departure: "Departure: 08:00",
         code: "Code: 3508",
-        price: "Price: R3500.00",
+        price: 3500.00,
         image: "Together by Kai Yan & Matt Walch.jpg",
         time: "short",
         place: "single",
-        rank: "",
+        date: "2023-06-03",
+        origin: "Cozumel"
     },
     {
         destination: "Celestial Whale Wander",
         duration: "Duration: 4 hours",
         departure: "Departure: 09:00",
         code: "Code: 4009",
-        price: "Price: R4000.00",
+        price: 4000.00,
         image: "Catharsis by Matt Walch.jpg",
         time: "short",
         place: "multi",
-        rank: "",
+        date: "2023-06-04",
+        origin: "Shanghai"
     },
     {
         destination: "Neptune's Whale Passage",
         duration: "Duration: 4.5 hours",
         departure: "Departure: 10:00",
         code: "Code: 4510",
-        price: "Price: R4500.00",
+        price: 4500.00,
         image: "Between Two Worlds by Matt Walch.jpg",
-        time: "short",
+        time: "long",
         place: "multi",
-        rank: "",
+        date: "2023-06-05",
+        origin: "Barcelona"
     },
     {
         destination: "Serene Whale Harbor",
         duration: "Duration: 5 hours",
         departure: "Departure: 11:00",
         code: "Code: 5011",
-        price: "Price: R5000.00",
+        price: 5000.00,
         image: "Tales From The Blue Planet by Matt Walch.jpg",
         time: "long",
         place: "multi",
-        rank: "",
+        date: "2023-06-06",
+        origin: "Nassau"
     },
     {
         destination: "Whale Rider Retreats",
         duration: "Duration: 5.5 hours",
         departure: "Departure: 12:00",
         code: "Code: 5512",
-        price: "Price: R5500.00",
+        price: 5500.00,
         image: "Shelter by Matt Walch.jpg",
         time: "long",
         place: "round",
-        rank: "",
+        date: "2023-06-07",
+        origin: "Rome"
     },
     {
         destination: "Tranquil Whale Cove",
         duration: "Duration: 6 hours",
         departure: "Departure: 13:00",
         code: "Code: 6013",
-        price: "Price: R6000.00",
+        price: 6000.00,
         image: "First Light by Matt Walch.jpg",
         time: "long",
         place: "round",
-        rank: "",
+        date: "2023-06-08",
+        origin: "Canaveral"
     },
     {
         destination: "Whispering Whale Shores",
         duration: "Duration: 6.5 hours",
         departure: "Departure: 14:00",
         code: "Code: 6514",
-        price: "Price: R6500.00",
+        price: 6500.00,
         image: "Redemption by Matt Walch.jpg",
         time: "long",
         place: "round",
-        rank: "",
+        date: "2023-06-09",
+        origin: "Helsinki"
     },
 ];
 
 let filterRadio = "";
-let filterCheap = "normal";
+let filterVisit = "single";
+let filterSpecial = "normal";
 
 // Document Loads
 $(document).ready(function(){
 
     // Name Welcome Change
-    $("#changeText").text("Welcome to Cetecea Cruises");
-
-    // Logo Visual Change
-    // $(".changelogo").html or animate, google it("<img src="assets/Cetecea Cruises Logo Hover.png" alt="Logo" height="60">");
+    $("h1").text("Welcome to Cetecea Cruises");
 
     //Hidden Information
     $("#tripDuration").hide();
@@ -119,9 +126,10 @@ $(document).ready(function(){
     $("#tripCode").hide();
     $("#tripPrice").hide();
     $("#purchaseButton").hide();
+    $("#changeWeather").hide();
 
     //Cards Load
-    loadTrips(arrayTrips);
+    filterSortRadio(arrayTrips);
 
 });
 
@@ -134,6 +142,7 @@ $("#tripContainer").on('click', '.card', function() {
     $(this).find("#tripCode").toggle();
     $(this).find("#tripPrice").toggle();
     $(this).find("#purchaseButton").toggle();
+    $(this).find("#changeWeather").toggle();
 
 })
 
@@ -142,16 +151,32 @@ function loadTrips(tripPresentation) {
 
     console.log(tripPresentation);
 
+    //Clear Elements
+    $("#tripContainer").empty();
+
+    //Loop Trips
     for (let i = 0; i < tripPresentation.length; i++) {
 
         const trip = tripPresentation[i];
 
         console.log(trip);
 
+        //API Call
+        $.ajax({
+            type:"GET",
+            url:"https://api.openweathermap.org/data/2.5/weather?q=" + trip.origin + "&appid=9e824547855a862d01427a733135023d",
+            success:function(data){
+                temp = data
+                console.log(temp);
+            }
+        }).done(function(){
+            $(thisChild).find("#changeWeather").text("Temperature: " + Math.round(temp.main.temp - 273));
+        })
+
         //Change Card Content
         $("#tripContainer").append($("#tripTemplate").html());
 
-        let thisChild = $("#tripContainer").children().eq(i+1);
+        let thisChild = $("#tripContainer").children().eq(i);
 
         $(thisChild).find("#tripDestination").text(trip.destination);
         $(thisChild).find("#tripDuration").text(trip.duration);
@@ -174,28 +199,117 @@ function loadTrips(tripPresentation) {
 //Filter Clicked
 $("input[name='tripRadio']").click(function(){
 
-    filterRadio = $(this).attri('value');
+    filterRadio = $(this).attr('value');
 
     console.log(filterRadio);
+    filterSortRadio();
+});
+
+//Filter Clicked
+$("input[name='visitRadio']").click(function(){
+
+    filterVisit = $(this).attr('value');
+
+    console.log(filterVisit);
+    filterSortRadio();
 });
 
 //Sort Clicked
 $("input[name='specialRadio']").click(function(){
 
-    filterCheap = $(this).attri('value');
+    filterSpecial = $(this).attr('value');
 
-    console.log(filterCheap);
+    console.log(filterSpecial);
+    filterSortRadio();
 });
 
-//
-$(document).ready(function(){
-    $.ajax({
-        type:"GET",
-        url:"https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=9e824547855a862d01427a733135023d",
-        success:function(data){
-            console.log(data);
-        }
-    }).done(function(){
-        ("#changeWeather").text(data.main.temp);
-    })
-});
+function filterSortRadio() {
+
+    let tripArrayRadio = [];
+
+    //Filter Trips
+    if (filterRadio) {
+        tripArrayRadio = arrayTrips.filter(trip => trip.time == filterRadio);
+    } else {
+        tripArrayRadio = arrayTrips;
+    }
+
+    //Filter Trips
+    if (filterVisit) {
+        tripArrayRadio = arrayTrips.filter(trip => trip.place == filterVisit);
+    } else {
+        tripArrayRadio = arrayTrips;
+    }
+
+    //Sort Trips
+    if (filterSpecial == "special") {
+
+        tripArrayRadio = tripArrayRadio.sort((a,b) => {
+            return a.price - b.price;
+        });
+    } else if (filterSpecial == "normal") {
+        tripArrayRadio = tripArrayRadio.sort((a, b) => {
+            let da = new Date(a.date);
+            let db = new Date(b.date);
+            return db - da;
+        })
+    }
+
+    loadTrips(tripArrayRadio);
+
+}
+
+//Remove Trips
+$("#remove1").click(function(){
+
+    $("#list1").remove();
+  
+  })
+  
+  $("#remove2").click(function(){
+  
+    $("#list2").remove();
+  
+  })
+  
+  $("#remove3").click(function(){
+  
+    $("#list3").remove();
+  
+  })
+  
+  $("#remove4").click(function(){
+  
+    $("#list4").remove();
+  
+  })
+  
+  $("#remove5").click(function(){
+  
+    $("#list5").remove();
+  
+  })
+
+  $("#remove6").click(function(){
+  
+    $("#list6").remove();
+  
+  })
+  
+  $("#remove7").click(function(){
+  
+    $("#list7").remove();
+  
+  })
+  
+  $("#remove8").click(function(){
+  
+    $("#list8").remove();
+  
+  })
+  
+  $("#remove9").click(function(){
+  
+    $("#list9").remove();
+  
+  })

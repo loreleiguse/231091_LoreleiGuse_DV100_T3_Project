@@ -17,9 +17,10 @@
         <div class="container">
 
           <!--Logo-->
-          <a class="navbar-brand" href="index.html">
-            <img src="assets/Cetecea Cruises Logo Transparent.png" alt="Logo" height="60">
-          </a>
+          <div class="figure">
+            <img class="image-main" src="assets/Cetecea Cruises Logo Transparent.png">
+            <img class="image-hover" src="assets/Cetecea Cruises Logo.png">
+          </div>
 
           <!--Nav Items-->
           <ul class="nav">
@@ -39,7 +40,7 @@
     <div class="container mt-5 pt-5">
 
       <!--Header-->
-      <h2>Explore the World of Cetecea Cruises and Purchase your 1st Trip!</h2>
+      <h2 class="prompt mb-4">Explore the World of Cetecea Cruises and Purchase your 1st Trip!</h2>
 
       <!--Filter and Sort-->
       <div class="row">
@@ -54,14 +55,17 @@
         
           <input type="radio" class="btn-check" name="tripRadio" id="longFilter" value="long" autocomplete="off">
           <label class="btn btn-outline-secondary" for="longFilter">Long Duration Trips</label>
-          
-          <input type="radio" class="btn-check" name="tripRadio" id="singleFilter" value="single" autocomplete="off">
+        </div>
+
+        <!--Filter Buttons-->
+        <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="visitRadio" id="singleFilter" value="single" autocomplete="off" checked>
           <label class="btn btn-outline-secondary" for="singleFilter">Single Destination</label>
         
-          <input type="radio" class="btn-check" name="tripRadio" id="multiFilter" value="multi" autocomplete="off">
+          <input type="radio" class="btn-check" name="visitRadio" id="multiFilter" value="multi" autocomplete="off">
           <label class="btn btn-outline-secondary" for="multiFilter">Multi Destinations</label>
         
-          <input type="radio" class="btn-check" name="tripRadio" id="roundFilter" value="round" autocomplete="off">
+          <input type="radio" class="btn-check" name="visitRadio" id="roundFilter" value="round" autocomplete="off">
           <label class="btn btn-outline-secondary" for="roundFilter">Round Trips</label>
         </div>
 
@@ -77,37 +81,35 @@
       <!--Trips List-->
       <div class="row py-3 gy-3" id="tripContainer">
 
-        <!--Card Template-->
-        <template id="tripTemplate">
-          <div class="col-4">
+        //Cards Appended Here
 
-            <!--Card-->
-            <div class="card">
-              <img src="assets/Moments by Kai Yan & Matt Walch.jpg" class="card-img-top" alt="Trip">
-              <div class="card-body">
-                <h5 class="card-title" id="tripDestination">Whalescape Odyssey</h5>
-                <p class="card-text" id="tripDuration">Duration</p>
-                <p class="card-text" id="tripDeparture">Departure</p>
-                <p class="card-text" id="tripCode">Code</p>
-                <p class="card-text" id="tripPrice">Price</p>
-                <a href="#" class="btn btn-light" id="purchaseButton">Purchase Ticket</a>
-              </div>
-            </div>
-          </div>
-        </template>
       </div>
     </div>
 
     <!--Footer-->
-    <footer>
-      <div class="row">
-        <div class="col">
-          <div class="end pt-4">
-            <h4>Cetecea Cruises © 2023</h4>
+    <div class="end">
+      <p>Cetecea Cruises © 2023</p>
+    </div>
+
+    <!--Card Template-->
+    <template id="tripTemplate">
+      <div class="col-4">
+
+        <!--Card-->
+        <div class="card">
+          <img src="assets/Moments by Kai Yan & Matt Walch.jpg" class="card-img-top" alt="Trip">
+          <div class="card-body">
+            <h5 class="card-title" id="tripDestination">Whalescape Odyssey</h5>
+            <p class="card-text" id="tripDuration">Duration</p>
+            <p class="card-text" id="tripDeparture">Departure</p>
+            <p class="card-text" id="tripCode">Code</p>
+            <p class="card-text" id="tripPrice">Price</p>
+            <div class="card-text" id="changeWeather"></div>
+            <a href="#" class="btn btn-light" id="purchaseButton">Purchase Ticket</a>
           </div>
         </div>
       </div>
-    </footer>
+    </template>
 
     <!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

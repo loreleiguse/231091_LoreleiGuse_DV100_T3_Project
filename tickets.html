@@ -17,9 +17,10 @@
         <div class="container">
 
           <!--Logo-->
-          <a class="navbar-brand" href="index.html">
-            <img src="assets/Cetecea Cruises Logo Transparent.png" alt="Logo" height="60">
-          </a>
+          <div class="figure">
+            <img class="image-main" src="assets/Cetecea Cruises Logo Transparent.png">
+            <img class="image-hover" src="assets/Cetecea Cruises Logo.png">
+          </div>
 
           <!--Nav Items-->
           <ul class="nav">
@@ -36,16 +37,174 @@
         </div>
     </nav>
 
-    <!--Footer-->
-    <footer>
+    <!--Table-->
+    <div class="container">
+      <table class="wishlist">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="list1">
+            <th scope="row">1</th>
+            <td>
+              <img src="assets/Moments by Kai Yan & Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>2506</td>
+            <td>Whalescape Odyssey</td>
+            <td>1</td>
+            <td>R2500.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove1">Remove</button>
+            </td>
+          </tr>
+          <tr id="list2">
+            <th scope="row">2</th>
+            <td>
+              <img src="assets/Family by Kai Yan & Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>3007</td>
+            <td>Whalesong Sojourns</td>
+            <td>2</td>
+            <td>R3000.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove2">Remove</button>
+            </td>
+          </tr>
+          <tr id="list3">
+            <th scope="row">3</th>
+            <td>
+              <img src="assets/Together by Kai Yan & Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>3508</td>
+            <td>Oceanic Whale Quest</td>
+            <td>3</td>
+            <td>R3500.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove3">Remove</button>
+            </td>
+          </tr>
+          <tr id="list4">
+            <th scope="row">4</th>
+            <td>
+              <img src="assets/Catharsis by Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>4009</td>
+            <td>Celestial Whale Wander</td>
+            <td>4</td>
+            <td>R4000.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove4">Remove</button>
+            </td>
+          </tr>
+          <tr id="list5">
+            <th scope="row">5</th>
+            <td>
+              <img src="assets/Between Two Worlds by Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>4510</td>
+            <td>Neptune's Whale Passage</td>
+            <td>5</td>
+            <td>R4500.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove5">Remove</button>
+            </td>
+          </tr>
+          <tr id="list6">
+            <th scope="row">6</th>
+            <td>
+              <img src="assets/Tales From The Blue Planet by Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>5011</td>
+            <td>Serene Whale Harbor</td>
+            <td>1</td>
+            <td>R5000.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove6">Remove</button>
+            </td>
+          </tr>
+          <tr id="list7">
+            <th scope="row">7</th>
+            <td>
+              <img src="assets/Shelter by Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>5512</td>
+            <td>Whale Rider Retreats</td>
+            <td>2</td>
+            <td>R5500.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove7">Remove</button>
+            </td>
+          </tr>
+          <tr id="list8">
+            <th scope="row">8</th>
+            <td>
+              <img src="assets/First Light by Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>6013</td>
+            <td>Tranquil Whale Cove</td>
+            <td>3</td>
+            <td>R6000.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove8">Remove</button>
+            </td>
+          </tr>
+          <tr id="list9">
+            <th scope="row">9</th>
+            <td>
+              <img src="assets/Redemption by Matt Walch.jpg" class="wish-image">
+            </td>
+            <td>6514</td>
+            <td>Whispering Whale Shores</td>
+            <td>4</td>
+            <td>R6500.00</td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary" id="remove9">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="end pt-4">
-            <h4>Cetecea Cruises © 2023</h4>
+        <!-- Button Trigger Modal -->
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Purchase Tickets
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalLabel">Successful Purchase</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                You have successfully purchased the selected trips.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+
+    <!--Footer-->
+    <div class="end">
+      <p>Cetecea Cruises © 2023</p>
+    </div>
 
     <!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
