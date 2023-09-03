@@ -1,15 +1,17 @@
 
-![EvergreenLogo](/assets/Cetecea Cruises Logo.png)
+![EvergreenLogo](/assets/Cetecea%20Cruises%20Logo.png)
 
-This is a demo project which aims to showcase more advanced javascript and jQuery to first year development students.
+Demonstration Video and Signed Plagiarism Document Included Below
 
-[Watch the demo »]()
+[Demonstration Video »](https://drive.google.com/drive/folders/1rOgiawcGbOqUrp7BhjjuGWi1FIC0vBr-?usp=sharing)
+[Signed Plagiarism Document](231091_Lorelei%20Guse_Signed%20Plagiarism%20Document.pdf)
 
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-   * [Home](#home)
-   * [Browse Plants](#browse-plants)
+   * [Homepage](#home)
+   * [Trips Page](#browse-plants)
+   * [Tickets Page](#browse-plants)
 * [Getting Started](#getting-started)
   * [Installing](#installing)
 * [Built With](#built-with)
@@ -20,15 +22,19 @@ This is a demo project which aims to showcase more advanced javascript and jQuer
 
 ## About The Project
 
-Evergreen allows users to browse and filter different plants to find the perfect addition to their home.
+The project was created for an Interactive Development 100 assignment during the 3rd term. The task was to design a Cruise Liner company website using Javascript and jQuery, specifically focusing on DOM manipulation. Images below show the final product.
 
-### Home
+### Homepage
 
-![EvergreenLogo](/assets/readme/readme_homepage.png)
+![EvergreenLogo](/screenshots/Screenshot%20(180).png)
 
-### Browse Plants
+### Trips Page
 
-![EvergreenLogo](/assets/readme/readme_browsepage.png)
+![EvergreenLogo](/screenshots/Screenshot%20(187).png)
+
+### Tickets Page
+
+![EvergreenLogo](/screenshots/Screenshot%20(191).png)
 
 ## Getting Started
 
@@ -63,17 +69,17 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Authors
 
-* **Paul Loots** - *Javascript & HTML* - [PaulLoots](https://github.com/PaulLoots)
-* **Carlo Kuyper** - *Open Weather API* - [CarloOpenWindow](https://github.com/CarloOpenWindow)
-
-See also the list of [contributors](https://github.com/paulowi/DV100-T3-Class-Project-Test/graphs/contributors) who participated in this project.
+* **Lorelei Guse** - * HTML & CSS & Javascript * - [LoreleiGuse](https://github.com/loreleiguse)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgements
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Paul Loots
+* Carlo Kuyper
+* Behance (n.d.). Kai Yan on Behance. [online] Behance. Available at: https://www.behance.net/kaiyhun [Accessed 3 Sep. 2023].
+* Behance (n.d.). Matt Walch on Behance. [online] Behance. Available at: https://www.behance.net/mattwalch [Accessed 3 Sep. 2023].
+* Sirv (n.d.). Change Image on Hover with CSS - Image Rollover Effect. [online] Sirv Help Center. Available at: https://sirv.com/help/articles/hover-change-image/#:~:text=The%20best%20way%20to%20swap [Accessed 3 Sep. 2023].
+* Wix (2019). Logo Maker | Create Your Own Free Logo | Wix.com. [online] Logo Maker | Create Your Own Free Logo | Wix.com. Available at: https://www.wix.com/logo/maker.
