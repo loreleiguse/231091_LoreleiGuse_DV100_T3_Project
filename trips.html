@@ -36,23 +36,78 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row" id="tripsContainer">
-            <template id="tripCardTemplate">
-                <div class="col-4">
-                    <div class="card">
-                        <img src="assets/Moments by Kai Yan & Matt Walch.jpg" class="card-img-top" id="tripImage" alt="Trip Image">
-                        <div class="card-body">
-                          <h5 class="card-title" id="destinationText">Destination</h5>
-                          <p class="card-text" id="durationText">Duration</p>
-                          <p class="card-text" id="departureText">Departure</p>
-                          <p class="card-text" id="codeText">Code</p>
-                        </div>
-                    </div>
-                </div>
-            </template>
+    <div class="container mt-5 pt-5">
+
+      <!--Header-->
+      <h2>Explore the World of Cetecea Cruises and Purchase your 1st Trip!</h2>
+
+      <!--Filter and Sort-->
+      <div class="row">
+
+        <!--Filter Buttons-->
+        <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="tripRadio" id="allFilter" value="" autocomplete="off" checked>
+          <label class="btn btn-outline-secondary" for="allFilter">All Destinations</label>
+        
+          <input type="radio" class="btn-check" name="tripRadio" id="shortFilter" value="short" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="shortFilter">Short Duration Trips</label>
+        
+          <input type="radio" class="btn-check" name="tripRadio" id="longFilter" value="long" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="longFilter">Long Duration Trips</label>
+          
+          <input type="radio" class="btn-check" name="tripRadio" id="singleFilter" value="single" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="singleFilter">Single Destination</label>
+        
+          <input type="radio" class="btn-check" name="tripRadio" id="multiFilter" value="multi" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="multiFilter">Multi Destinations</label>
+        
+          <input type="radio" class="btn-check" name="tripRadio" id="roundFilter" value="round" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="roundFilter">Round Trips</label>
         </div>
+
+        <!--Sort Button-->
+        <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="specialRadio" id="noFilter" value="normal" autocomplete="off" checked>
+          <label class="btn btn-outline-secondary" for="noFilter">All Trips</label>
+          <input type="radio" class="btn-check" name="specialRadio" id="specialFilter" value="special" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="specialFilter">Row Boat Special</label>
+        </div>
+      </div>
+
+      <!--Trips List-->
+      <div class="row py-3 gy-3" id="tripContainer">
+
+        <!--Card Template-->
+        <template id="tripTemplate">
+          <div class="col-4">
+
+            <!--Card-->
+            <div class="card">
+              <img src="assets/Moments by Kai Yan & Matt Walch.jpg" class="card-img-top" alt="Trip">
+              <div class="card-body">
+                <h5 class="card-title" id="tripDestination">Whalescape Odyssey</h5>
+                <p class="card-text" id="tripDuration">Duration</p>
+                <p class="card-text" id="tripDeparture">Departure</p>
+                <p class="card-text" id="tripCode">Code</p>
+                <p class="card-text" id="tripPrice">Price</p>
+                <a href="#" class="btn btn-light" id="purchaseButton">Purchase Ticket</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
     </div>
+
+    <!--Footer-->
+    <footer>
+      <div class="row">
+        <div class="col">
+          <div class="end pt-4">
+            <h4>Cetecea Cruises © 2023</h4>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

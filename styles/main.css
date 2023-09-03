@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+ /*Global Styles*/
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
@@ -7,6 +10,12 @@ h1,h2,h3,h4,h5,h6 {
 p {
     font-family: 'Open Sans', sans-serif;
 }
+
+.full-height {
+    height: 100vh;
+}
+
+ /*Nav*/
 
 .nav-link {
     font-family: 'Montserrat', sans-serif;
@@ -21,4 +30,64 @@ p {
 .nav-link:active {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+}
+
+ /*Images*/
+
+.whale {
+    height: 100vh;
+    position: relative;
+}
+
+ /*Accordion*/
+
+.accordion {
+    width: 80vh;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/*Other*/
+
+/* .changelogo {
+    width: 216px;
+    height: 60px;
+    background: url("../assets/Cetecea Cruises Logo Transparent.png Cruises Logo Transparent.png") no-repeat;
+    display: inline-block;
+}
+
+.changelogo:hover {
+    background: url("../assets/Cetecea Cruises Logo Hover.png Cruises Logo Hover.png") no-repeat;
+} */
+
+/*Card*/
+
+.card {
+    border: none;
+    background-color: #559092;
+}
+
+.card-img-top {
+    width: auto;
+    height: 520px;
+    margin: auto;
+}
+
+.card-title {
+    color: white;
+}
+
+.card-text {
+    color: white;
+}
+
+/*Footer*/
+
+.end {
+    height: 80px;
+    color: white;
+    background-color: #559092;
+    text-align: center;
 }
